@@ -1,0 +1,100 @@
+html body #app {
+  width: 65vw;
+  background: linear-gradient(135deg, #B2BEB5, #708090) !important;
+}
+
+#app {
+  padding: 10px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #B2BEB5, #708090) !important;
+  max-height: 90vh; 
+  overflow-y: auto; 
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+  position: relative; 
+  z-index: 2;
+}
+
+img {
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Hide scrollbar */
+#app::-webkit-scrollbar {
+  display: none;
+}
+
+.tracing-beam {
+  position: absolute;
+  top: 0;
+  left: 50%; /* Centered beam */
+  width: 3px;
+  height: 100px; /* Fixed height */
+  background: linear-gradient(to bottom, #18ccfc, #6344f5, #ae48ff);
+  animation: tracingAnimation 4s linear infinite;
+  z-index: 1;
+  transform: translateX(-50%); /* Ensures centering */
+}
+
+@keyframes tracingAnimation {
+  0% {
+    top: -100px; /* Starts above the container */
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%; /* Moves to the bottom */
+    opacity: 0;
+  }
+}
+
+.HotelGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(2, auto);  
+  gap: 10px; 
+  width: fit-content; 
+  margin: auto; 
+}
+
+/* Menu Section Styling */
+#menu-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+#menu-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#menu-section button {
+  background-color: white;
+  color: #ff7e5f;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#menu-section button:hover {
+  background-color: #ff7e5f;
+  color: white;
+  transform: scale(1.1);
+}
